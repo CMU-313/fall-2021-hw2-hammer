@@ -59,7 +59,7 @@
                     <button class="btn btn-primary btn-hotkey-default" name="{% if form.prefix %}{{ form.prefix }}-submit{% else %}submit{% endif %}" type="submit"><i class="fa fa-check"></i> {% if submit_label %}{{ submit_label }}{% else %}{% if object %}{% trans 'Save' %}{% else %}{% trans 'Submit' %}{% endif %}{% endif %}</button>
                 {% endif %}
                 {% if previous %}
-                      &nbsp;<a class="btn btn-default" onclick='history.back();'>
+                    &nbsp;<a class="btn btn-default" onclick='history.back();' style = "color: black">
                         <i class="fa fa-times"></i> {% if cancel_label %}{{ cancel_label }}{% else %}{% trans 'Cancel' %}{% endif %}
                       </a>
                 {% endif %}
