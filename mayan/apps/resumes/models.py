@@ -1,8 +1,9 @@
+# from typing_extensions import Required
 from django.db import models
+from django import forms
 from django.urls import reverse
 from django.utils.translation import ugettext_lazy as _
 
-# from colorful.fields import RGBColorField
 
 # from mayan.apps.acls.models import AccessControlList
 from mayan.apps.databases.model_mixins import ExtraDataModelMixin
@@ -19,22 +20,40 @@ from mayan.apps.databases.model_mixins import ExtraDataModelMixin
 
 class Resume(ExtraDataModelMixin, models.Model):
     """
-    This model represents a binary property that can be applied to a document.
-    The tag can have a label and a color.
+    This model represents a form to upload resumes.
     """
-    label = models.CharField(
+    name = models.CharField(
         db_index=True, help_text=_(
-            'nonononononoo.'
-        ), max_length=128, unique=True, verbose_name=_('NO.')
+            ''
+        ), max_length=128, unique=True, verbose_name=_('First and Last Name')
     )
-    color = models.CharField(
+    email = models.CharField(
         db_index=True, help_text=_(
-            'nonononononoo.'
-        ), max_length=128, unique=True, verbose_name=_('NO.')
+            ''
+        ), max_length=128, unique=True, verbose_name=_('Email')
     )
-    # documents = models.ManyToManyField(
-    #     related_name='tags', to=Document, verbose_name=_('Documents')
-    # )
+
+    phone = models.CharField(
+        db_index=True, help_text=_(
+            ''
+        ), max_length=128, unique=True, verbose_name=_('Phone Number')
+    )
+
+    address = models.CharField(
+        db_index=True, help_text=_(
+            ''
+        ), max_length=128, unique=True, verbose_name=_('Home Address'), blank=True
+    )
+
+    CHOICES = [('1','1'),('2','2'),('3','3'),('4','4'),('5','5')]
+    education = models.CharField(max_length=11, choices=CHOICES, help_text="Please take the applicant's GPA, etc. into consideration.", blank=True)
+
+    work = models.CharField(max_length=11, choices=CHOICES, help_text="Please take the applicant's years of experience and field of expertise into consideration.", blank=True)
+    extracurriculars = models.CharField(max_length=11, choices=CHOICES, help_text="Please take the applicant's hobbies, community service, and other activities into consideration.", blank=True)
+    skills_and_awards = models.CharField(max_length=11, choices=CHOICES, help_text="Please take the applicant's relevant skills and honors into consideration.", blank=True)
+
+    # TODO: add more form fields
+
 
     # class Meta:
     #     ordering = ('label',)
@@ -42,7 +61,7 @@ class Resume(ExtraDataModelMixin, models.Model):
     #     verbose_name_plural = _('Tags')
 
     def __str__(self):
-        return self.label
+        return self.name
 
     # @method_event(
     #     action_object='self',

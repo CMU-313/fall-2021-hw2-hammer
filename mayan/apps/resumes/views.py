@@ -101,7 +101,7 @@ logger = logging.getLogger(name=__name__)
 
 class ResumeCreateView(SingleObjectCreateView):
     extra_context = {'title': _('Resume form')}
-    fields = ('label', 'color')
+    fields = ('name', 'email', 'phone', 'address', 'education', 'work', 'extracurriculars', 'skills_and_awards') # TODO: add new form field names here
     model = Resume
     # post_action_redirect = reverse_lazy(viewname='resumes:resume_list')
     view_permission = permission_tag_create
