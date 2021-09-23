@@ -1,9 +1,9 @@
 from django.contrib import admin
 
-from .models import Tag
+from .models import Resume
 
 
-@admin.register(Tag)
+@admin.register(Resume)
 class TagAdmin(admin.ModelAdmin):
-    filter_horizontal = ('documents',)
-    list_display = ('label', 'color', 'get_preview_widget')
+    # filter_horizontal = ('documents',)
+    list_display = ('label', 'color')
