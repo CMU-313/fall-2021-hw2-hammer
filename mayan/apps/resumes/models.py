@@ -22,6 +22,44 @@ class Resume(ExtraDataModelMixin, models.Model):
     """
     This model represents a form to upload resumes.
     """
+
+    """
+    NEW FIELD CREATION PROCESS:
+    1. Follow one of the two templates provided below.
+    2. Add the field name to the 'fields' and 'list_display' variables:
+        - 'fields' is located in the 'ResumeCreateView' class defined in 'views.py'
+        - 'list_display' is located in the 'TagAdmin' class defined in 'admin.py'
+    """
+
+    """
+    Text Input Field Template:
+
+    FIELD_NAME = models.CharField(
+        db_index=True, help_text=_(
+            ''
+        ), max_length=CHAR_LENGTH, unique=True, verbose_name=_('FIELD_DESCRIPTION'), blank=REQUIRED
+    )
+
+    FIELD_NAME: Name of the field
+    CHAR_LENGTH: The maximum character length of an input for this field
+    FIELD_DESCRIPTION: What the end user sees as the name of the form
+    REQUIRED: A boolean that represents whether or not this field is required to submit the form
+              True -> field is required, False -> field is not required
+    """
+    """
+    Radio Input Field Template:
+
+    choiceArray = [('CHOICE_INTERNAL_1', 'CHOICE_EXTERNAL_1'), ('CHOICE_INTERNAL_2', 'CHOICE_EXTERNAL_2'), ...]
+    FIELD_NAME = models.CharField(max_length=CHAR_LENGTH, choices=choiceArray, help_text="FIELD_DESCRIPTION"
+
+    choiceArray: An array of tuples, where each tuple represents a single field option
+    CHOICE_INTERNAL_N: The internal (developer-facing) name of the field option
+    CHOICE_EXTERNAL_N: The external (customer-facing) name of the field option; for our purposes it should be
+                       fine to have CHOICE_INTERNAL_N and CHOICE_EXTERNAL_N to be identical to each other
+    FIELD_NAME: The name of the field
+    CHAR_LENGTH: The maximum character length of an input for this field
+    FIELD_DESCRIPTION: A brief description or help text that will be displayed under the field
+    """
     name = models.CharField(
         db_index=True, help_text=_(
             ''
