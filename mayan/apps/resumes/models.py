@@ -78,10 +78,16 @@ class Resume(ExtraDataModelMixin, models.Model):
         ), max_length=128, unique=True, verbose_name=_('Applicant ID')
     )
 
-    reviewer_name = models.CharField(
+    reviewer_first_name = models.CharField(
         db_index=True, help_text=_(
             ''
-        ), max_length=128, unique=True, verbose_name=_('Reviewer Name')
+        ), max_length=128, unique=True, verbose_name=_('Reviewer First Name')
+    )
+
+    reviewer_last_name = models.CharField(
+        db_index=True, help_text=_(
+            ''
+        ), max_length=128, unique=True, verbose_name=_('Reviewer Last Name')
     )
 
     CHOICES = [('1','1'),('2','2'),('3','3'),('4','4'),('5','5')]
