@@ -76,7 +76,7 @@ at: https://docs.mayan-edms.com/parts/installation.html
 <h2 align="center">Important links</h2>
 
 
-- [Test Script] (https://docs.google.com/document/d/1RwBCOA6BSgwzwmiDnEcmgtD0O8u6Ak4VweT3pv_eBE8/edit?usp=sharing)
+- [Test Script](https://docs.google.com/document/d/1RwBCOA6BSgwzwmiDnEcmgtD0O8u6Ak4VweT3pv_eBE8/edit?usp=sharing)
 - [Homepage](http://www.mayan-edms.com)
 - [Documentation](https://docs.mayan-edms.com)
 - [Contributing](https://gitlab.com/mayan-edms/mayan-edms/blob/master/CONTRIBUTING.md)
