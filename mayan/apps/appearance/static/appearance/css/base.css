@@ -15,6 +15,26 @@ body {
     padding-top: 60px;
 }
 
+/* unvisited link */
+a:link {
+    color: black;
+}
+  
+  /* visited link */
+a:visited {
+    color: black;
+}
+  
+  /* mouse over link */
+a:hover {
+    color: black;
+}
+  
+  /* selected link */
+a:active {
+    color: black;
+}
+
 .navbar-brand {
     font-family: "IM Fell English SC", serif;
 }
@@ -432,8 +452,8 @@ a i {
 
 #menu-main {
     display: block;
-    background-color: #2c3e50;
-    border-right: 1px solid #18bc9c;
+    background-color: white;
+    border-right: 1px solid black;
     bottom: 0;
     left: -210px;
     overflow-x: hidden;
@@ -562,13 +582,13 @@ a i {
 }
 
 #accordion-sidebar .panel-heading {
-    background-color: #2c3e50;
+    background-color: #EDEDED;
     color: white;
     padding: 0px;
 }
 
 #accordion-sidebar .panel-heading:hover {
-    background-color: #517394;
+    background-color: #c0c0c0;
     transition: .1s ease;
 }
 
@@ -588,7 +608,7 @@ a i {
 #accordion-sidebar .panel-body {
     font-size: 13px;
     border: 0px;
-    background-color: #2c3e50;
+    background-color: #EDEDED;
     padding-top: 3px;
     padding-left: 20px;
     padding-right: 0px;
