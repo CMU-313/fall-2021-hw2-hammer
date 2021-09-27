@@ -78,34 +78,10 @@ class Resume(ExtraDataModelMixin, models.Model):
         ), max_length=128, unique=True, verbose_name=_('Applicant ID')
     )
 
-    email = models.CharField(
-        db_index=True, help_text=_(
-            ''
-        ), max_length=128, unique=True, verbose_name=_('Applicant Email'), blank=True
-    )
-
-    phone = models.CharField(
-        db_index=True, help_text=_(
-            ''
-        ), max_length=128, unique=True, verbose_name=_('Applicant Phone Number'), blank=True
-    )
-
-    address = models.CharField(
-        db_index=True, help_text=_(
-            ''
-        ), max_length=128, unique=True, verbose_name=_('Applicant Home Address'), blank=True
-    )
-
     reviewer_name = models.CharField(
         db_index=True, help_text=_(
             ''
         ), max_length=128, unique=True, verbose_name=_('Reviewer Name')
-    )
-
-    comments = models.TextField(
-        db_index=True, help_text=_(
-            ''
-        ), unique=True, verbose_name=_('Reviewer Comments')
     )
 
     CHOICES = [('1','1'),('2','2'),('3','3'),('4','4'),('5','5')]
@@ -114,6 +90,12 @@ class Resume(ExtraDataModelMixin, models.Model):
     work = models.CharField(max_length=11, choices=CHOICES, help_text="Please take the applicant's years of experience and field of expertise into consideration.")
     extracurriculars = models.CharField(max_length=11, choices=CHOICES, help_text="Please take the applicant's hobbies, community service, and other activities into consideration.")
     skills_and_awards = models.CharField(max_length=11, choices=CHOICES, help_text="Please take the applicant's relevant skills and honors into consideration.")
+
+    comments = models.TextField(
+        db_index=True, help_text=_(
+            'Please comment on this applicant.'
+        ), unique=True, verbose_name=_('Reviewer Comments')
+    )
 
     # TODO: add more form fields
 
