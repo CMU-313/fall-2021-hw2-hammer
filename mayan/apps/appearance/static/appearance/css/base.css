@@ -397,6 +397,20 @@ a i {
     color: #d9534f;
 }
 
+.btn-danger {
+   background-color: black;
+   border-color: black;
+}
+
+.btn-default {
+    background-color: black;
+    border-color: black;
+}
+
+.help-block {
+  color: black;
+}
+
 .btn-default.btn-outline:hover,
 .btn-primary.btn-outline:hover,
 .btn-success.btn-outline:hover,
