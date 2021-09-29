@@ -60,6 +60,7 @@ class Resume(ExtraDataModelMixin, models.Model):
     CHAR_LENGTH: The maximum character length of an input for this field
     FIELD_DESCRIPTION: A brief description or help text that will be displayed under the field
     """
+
     first_name = models.CharField(
         db_index=True, help_text=_(
             ''
