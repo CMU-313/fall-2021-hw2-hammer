@@ -60,35 +60,49 @@ class Resume(ExtraDataModelMixin, models.Model):
     CHAR_LENGTH: The maximum character length of an input for this field
     FIELD_DESCRIPTION: A brief description or help text that will be displayed under the field
     """
-    name = models.CharField(
+
+    first_name = models.CharField(
         db_index=True, help_text=_(
             ''
-        ), max_length=128, unique=True, verbose_name=_('First and Last Name')
-    )
-    email = models.CharField(
-        db_index=True, help_text=_(
-            ''
-        ), max_length=128, unique=True, verbose_name=_('Email')
+        ), max_length=128, unique=True, verbose_name=_('Applicant First Name')
     )
 
-    phone = models.CharField(
+    last_name = models.CharField(
         db_index=True, help_text=_(
             ''
-        ), max_length=128, unique=True, verbose_name=_('Phone Number')
+        ), max_length=128, unique=True, verbose_name=_('Applicant Last Name')
     )
 
-    address = models.CharField(
+    applicant_id = models.CharField(
         db_index=True, help_text=_(
             ''
-        ), max_length=128, unique=True, verbose_name=_('Home Address'), blank=True
+        ), max_length=128, unique=True, verbose_name=_('Applicant ID')
+    )
+
+    reviewer_first_name = models.CharField(
+        db_index=True, help_text=_(
+            ''
+        ), max_length=128, unique=True, verbose_name=_('Reviewer First Name')
+    )
+
+    reviewer_last_name = models.CharField(
+        db_index=True, help_text=_(
+            ''
+        ), max_length=128, unique=True, verbose_name=_('Reviewer Last Name')
     )
 
     CHOICES = [('1','1'),('2','2'),('3','3'),('4','4'),('5','5')]
-    education = models.CharField(max_length=11, choices=CHOICES, help_text="Please take the applicant's GPA, etc. into consideration.", blank=True)
+    education = models.CharField(max_length=11, choices=CHOICES, help_text="Please take the applicant's GPA, etc. into consideration.")
 
-    work = models.CharField(max_length=11, choices=CHOICES, help_text="Please take the applicant's years of experience and field of expertise into consideration.", blank=True)
-    extracurriculars = models.CharField(max_length=11, choices=CHOICES, help_text="Please take the applicant's hobbies, community service, and other activities into consideration.", blank=True)
-    skills_and_awards = models.CharField(max_length=11, choices=CHOICES, help_text="Please take the applicant's relevant skills and honors into consideration.", blank=True)
+    work = models.CharField(max_length=11, choices=CHOICES, help_text="Please take the applicant's years of experience and field of expertise into consideration.")
+    extracurriculars = models.CharField(max_length=11, choices=CHOICES, help_text="Please take the applicant's hobbies, community service, and other activities into consideration.")
+    skills_and_awards = models.CharField(max_length=11, choices=CHOICES, help_text="Please take the applicant's relevant skills and honors into consideration.")
+
+    comments = models.TextField(
+        db_index=True, help_text=_(
+            'Please comment on this applicant.'
+        ), unique=True, verbose_name=_('Reviewer Comments')
+    )
 
     # TODO: add more form fields
 
