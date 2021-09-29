@@ -18,6 +18,28 @@ from mayan.apps.databases.model_mixins import ExtraDataModelMixin
 # from .html_widgets import widget_single_tag
 
 
+class Cumulative_Review(models.Model):
+    reviews = dict()
+
+    def averageReviews(applicant_id):
+        return
+
+    def medianReviews(applicant_id):
+        return
+
+
+class Review(models.Model):
+    applicant_first_fame = models.CharField(max_length=30, unique=False)
+    applicant_last_name = models.CharField(max_length=30, unique=False)
+    reviewer_first_name = models.CharField(max_length=30, unique=False)
+    reviewer_last_name = models.CharField(max_length=30, unique=False)
+    applicant_ID = models.CharField(max_length=8, unique=True)
+    education_score = models.IntegerField()
+    word_score = models.IntegerField()
+    extracurriculars_score = models.IntegerField()
+    skills_and_award_ccore = models.IntegerField()
+    comments = models.CharField(max_length=500, unique=False)
+
 class Resume(ExtraDataModelMixin, models.Model):
     """
     This model represents a form to upload resumes.

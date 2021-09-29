@@ -18,7 +18,7 @@ from mayan.apps.views.mixins import ExternalObjectViewMixin
 from .forms import TagMultipleSelectionForm
 from .icons import icon_menu_tags, icon_document_tag_remove_submit
 from .links import link_document_tag_multiple_attach, link_tag_create
-from .models import Resume
+from .models import (Resume, Review, Cumulative_Review)
 from .permissions import (
     permission_tag_attach, permission_tag_create, permission_tag_delete,
     permission_tag_edit, permission_tag_remove, permission_tag_view
