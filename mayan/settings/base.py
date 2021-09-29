@@ -128,6 +128,7 @@ INSTALLED_APPS = (
     'mayan.apps.redactions',
     'mayan.apps.sources',
     'mayan.apps.tags',
+    'mayan.apps.resumes',
     'mayan.apps.web_links',
     # Placed after rest_api to allow template overriding
     'drf_yasg'
