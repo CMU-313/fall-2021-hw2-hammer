@@ -4,7 +4,6 @@ from django import forms
 from django.urls import reverse
 from django.utils.translation import ugettext_lazy as _
 
-
 # from mayan.apps.acls.models import AccessControlList
 from mayan.apps.databases.model_mixins import ExtraDataModelMixin
 # from mayan.apps.events.classes import EventManagerMethodAfter, EventManagerSave
@@ -64,31 +63,31 @@ class Resume(ExtraDataModelMixin, models.Model):
     first_name = models.CharField(
         db_index=True, help_text=_(
             ''
-        ), max_length=128, unique=True, verbose_name=_('Applicant First Name')
+        ), max_length=128, unique=False, verbose_name=_('Applicant First Name')
     )
 
     last_name = models.CharField(
         db_index=True, help_text=_(
             ''
-        ), max_length=128, unique=True, verbose_name=_('Applicant Last Name')
+        ), max_length=128, unique=False, verbose_name=_('Applicant Last Name')
     )
 
     applicant_id = models.CharField(
         db_index=True, help_text=_(
             ''
-        ), max_length=128, unique=True, verbose_name=_('Applicant ID')
+        ), max_length=128, unique=False, verbose_name=_('Applicant ID')
     )
 
     reviewer_first_name = models.CharField(
         db_index=True, help_text=_(
             ''
-        ), max_length=128, unique=True, verbose_name=_('Reviewer First Name')
+        ), max_length=128, unique=False, verbose_name=_('Reviewer First Name')
     )
 
     reviewer_last_name = models.CharField(
         db_index=True, help_text=_(
             ''
-        ), max_length=128, unique=True, verbose_name=_('Reviewer Last Name')
+        ), max_length=128, unique=False, verbose_name=_('Reviewer Last Name')
     )
 
     CHOICES = [('1','1'),('2','2'),('3','3'),('4','4'),('5','5')]
@@ -111,6 +110,16 @@ class Resume(ExtraDataModelMixin, models.Model):
     #     ordering = ('label',)
     #     verbose_name = _('Tag')
     #     verbose_name_plural = _('Tags')
+
+
+    def findAverageReviews(self, app_id):
+        Resume.objects.filter(applicant_id=app_id).annotate(avg_eduction_score=Avg('education'))
+        education_score = Resume.objects.filter(applicant_id=app_id).annotate(avg_eduction_score=Avg('education'))
+        work_score = Resume.objects.filter(applicant_id=app_id).annotate(avg_work_score=Avg('work'))
+        extracurriculars_score = Resume.objects.filter(applicant_id=app_id).annotate(avg_extracurriculars_score=Avg('extracurriculars'))
+        skills_and_award_score = Resume.objects.filter(applicant_id=app_id).annotate(avg_SA_score=Avg('skills_and_award'))
+        return [education_score, work_score, extracurriculars_score, skills_and_award_score]
+
 
     def __str__(self):
         return self.name
