@@ -8,8 +8,8 @@ from .permissions import permission_tag_create, permission_tag_view
 
 menu_tags = Menu(
     condition=get_cascade_condition(
-        app_label='resumes', model_name='Resume',
+        app_label='reviews', model_name='Review',
         object_permission=permission_tag_view,
         view_permission=permission_tag_create,
-    ), icon=icon_menu_tags, label=_('Resumes'), name='resumes'
+    ), icon=icon_menu_tags, label=_('Reviews'), name='reviews'
 )

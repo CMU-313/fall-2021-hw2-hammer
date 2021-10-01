@@ -18,16 +18,16 @@ from mayan.apps.databases.model_mixins import ExtraDataModelMixin
 # from .html_widgets import widget_single_tag
 
 
-class Resume(ExtraDataModelMixin, models.Model):
+class Review(ExtraDataModelMixin, models.Model):
     """
-    This model represents a form to upload resumes.
+    This model represents a form to review and score applicants.
     """
 
     """
     NEW FIELD CREATION PROCESS:
     1. Follow one of the two templates provided below.
     2. Add the field name to the 'fields' and 'list_display' variables:
-        - 'fields' is located in the 'ResumeCreateView' class defined in 'views.py'
+        - 'fields' is located in the 'ReviewCreateView' class defined in 'views.py'
         - 'list_display' is located in the 'TagAdmin' class defined in 'admin.py'
     """
 

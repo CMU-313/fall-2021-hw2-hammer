@@ -6,7 +6,7 @@ from django.conf.urls import url
 #     APITagDetailView
 # )
 from .views import (
-    ResumeCreateView,
+    ReviewCreateView,
     # DocumentTagListView, TagAttachActionView, TagCreateView,
     # TagDeleteActionView, TagEditView, TagListView, TagRemoveActionView,
     # TagDocumentListView
@@ -38,8 +38,8 @@ urlpatterns = [
     # ),
     # url(regex=r'^tags/$', name='tag_list', view=TagListView.as_view()),
     url(
-        regex=r'^resumes/create/$', name='resumes_create',
-        view=ResumeCreateView.as_view()
+        regex=r'^reviews/create/$', name='reviews_create',
+        view=ReviewCreateView.as_view()
     ),
     # url(
     #     regex=r'^tags/(?P<tag_id>\d+)/delete/$', name='tag_delete',

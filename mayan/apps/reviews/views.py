@@ -18,7 +18,7 @@ from mayan.apps.views.mixins import ExternalObjectViewMixin
 from .forms import TagMultipleSelectionForm
 from .icons import icon_menu_tags, icon_document_tag_remove_submit
 from .links import link_document_tag_multiple_attach, link_tag_create
-from .models import Resume
+from .models import Review
 from .permissions import (
     permission_tag_attach, permission_tag_create, permission_tag_delete,
     permission_tag_edit, permission_tag_remove, permission_tag_view
@@ -99,13 +99,13 @@ logger = logging.getLogger(name=__name__)
 #             tag.attach_to(document=instance)
 
 
-class ResumeCreateView(SingleObjectCreateView):
+class ReviewCreateView(SingleObjectCreateView):
 
     extra_context = {'title': _('Applicant scoring form')}
-    fields = ('first_name', 'last_name', 'applicant_id', 'reviewer_first_name', 'reviewer_last_name', 'education', 'work', 'extracurriculars', 'skills_and_awards', 'comments') # TODO: add new form field names here
+    fields = ('applicant_id', 'reviewer_first_name', 'reviewer_last_name', 'education', 'work', 'extracurriculars', 'skills_and_awards', 'comments') # TODO: add new form field names here
 
-    model = Resume
-    # post_action_redirect = reverse_lazy(viewname='resumes:resume_list')
+    model = Review
+    # post_action_redirect = reverse_lazy(viewname='reviews:review_list')
     view_permission = permission_tag_create
 
     def get_instance_extra_data(self):
