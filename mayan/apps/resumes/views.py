@@ -101,8 +101,8 @@ logger = logging.getLogger(name=__name__)
 
 class ResumeCreateView(SingleObjectCreateView):
 
-    extra_context = {'title': _('Applicant scoring form')}
-    fields = ('first_name', 'last_name', 'applicant_id', 'reviewer_first_name', 'reviewer_last_name', 'education', 'work', 'extracurriculars', 'skills_and_awards', 'comments') # TODO: add new form field names here
+    extra_context = {'title': _('Applicant Scoring Form')}
+    fields = ('applicant_id', 'reviewer_first_name', 'reviewer_last_name', 'education', 'work', 'extracurriculars', 'skills_and_awards', 'comments') # TODO: add new form field names here
 
     model = Resume
     # post_action_redirect = reverse_lazy(viewname='resumes:resume_list')
