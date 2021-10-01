@@ -33,3 +33,15 @@ class TagModuleTestCase(TagTestMixin, BaseTestCase):
         self._create_test_tag()
 
         self.assertTrue(self.test_tag.get_absolute_url())
+
+
+class AverageReviewsTestCase(BaseTestCase):
+    def setUp(self):
+        super().setUp()
+        self._create_test_applicant()
+    
+    def test_find_average_reviews(self):
+        self.assertTrue(self.applicant.extracurriculars == self.extracurriculars)
+        self.assertTrue(self.applicant.work == self.work)
+        self.assertTrue(self.applicant.education == self.education)
+        self.assertTrue(self.applicant.skills_and_award == self.skills_and_award)
