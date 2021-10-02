@@ -86,6 +86,8 @@ at: https://docs.mayan-edms.com/parts/installation.html
 <h2 align="center">Additional Documentation</h2>
 Our group chose feature two. We created a form for reviewers to enter and score candidates along various directions, which can be saved and aggregated across multiple reviewers. Out of the three options given, we thought this option had company-candidate interaction, and it was the most essential point out of the three to have. We updated the existing Mayan framework to reflect our purposes.
 
+The form is simplified so there is a minimal number of categories that still cover all the applicant information. The simplicity increases the reviewer's efficiency and is easy to understand and use. Additionally, the design only uses two colors to emphasize the answer fields so users can easily find focus and maintain it while working.
+
 <h3>Initial Design</h3>
 We created an initial design on <a href="https://www.figma.com/file/fjZ7zQ3fFLX0zpS3pslCfZ/hammer?node-id=312%3A2"> Figma </a> to create an outline/wireframe for the coding process.
 
@@ -95,7 +97,7 @@ We created an initial design on <a href="https://www.figma.com/file/fjZ7zQ3fFLX0
 How to use (user/reviewer):
 
 - Note down the applicant ID corresponding to the resume
-- Enter your first and last name
+- Enter reviewer first and last name
 - Rate applicant's quality of education, work, extracurriculars, and skills and awards from 1-5, 1 being poor quality and 5 being great quality
 - (Optional) Leave any additional comments in the last blank
 - Save the form to save information to backend
