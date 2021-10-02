@@ -87,7 +87,7 @@ at: https://docs.mayan-edms.com/parts/installation.html
 Our group chose feature two. We created a form for reviewers to enter and score candidates along various directions, which can be saved and aggregated across multiple reviewers. Out of the three options given, we thought this option had company-candidate interaction, and it was the most essential point out of the three to have. We updated the existing Mayan framework to reflect our purposes.
 
 <h3>Initial Design</h3>
-We created an initial design on Figma to create an outline/wireframe for the coding process.
+We created an initial design on <a href="https://www.figma.com/file/fjZ7zQ3fFLX0zpS3pslCfZ/hammer?node-id=312%3A2"> Figma </a> to create an outline/wireframe for the coding process.
 
 <img width="450" alt="Screen Shot 2021-10-01 at 10 07 46 PM" src="https://user-images.githubusercontent.com/70723676/135700554-7e2a8ff9-349b-4c10-a29a-fd89f563e160.png">
 
