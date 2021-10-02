@@ -37,14 +37,14 @@ from .permissions import (
 )
 
 
-class ResumesApp(MayanAppConfig):
-    app_namespace = 'resumes'
-    app_url = 'resumes'
+class ReviewsForm(MayanAppConfig):
+    app_namespace = 'reviews'
+    app_url = 'reviews'
     has_rest_api = True
     has_static_media = True
     has_tests = True
-    name = 'mayan.apps.resumes'
-    verbose_name = _('Resumes')
+    name = 'mayan.apps.reviews'
+    verbose_name = _('Reviews')
 
     # def ready(self):
     #     super().ready()

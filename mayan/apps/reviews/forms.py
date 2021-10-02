@@ -4,7 +4,7 @@ from mayan.apps.views.forms import FilteredSelectionForm
 from django.forms.widgets import RadioSelect
 from .widgets import TagFormWidget
 from django import forms
-from mayan.apps.resumes.models import Resume
+from mayan.apps.reviews.models import Review
 
 
 class TagMultipleSelectionForm(FilteredSelectionForm):
@@ -19,10 +19,10 @@ class TagMultipleSelectionForm(FilteredSelectionForm):
         widget_class = TagFormWidget
         widget_attributes = {'class': 'select2-tags'}
 
-class ResumeForm(forms.ModelForm):
+class ReviewForm(forms.ModelForm):
 
     class Meta:
-           model = Resume
+           model = Review
            fields = '__all__'
            widgets = {
                'education': RadioSelect(),
