@@ -101,7 +101,7 @@ logger = logging.getLogger(name=__name__)
 
 class ReviewCreateView(SingleObjectCreateView):
 
-    extra_context = {'title': _('Applicant scoring form')}
+    extra_context = {'title': _('Applicant Scoring Form')}
     fields = ('applicant_id', 'reviewer_first_name', 'reviewer_last_name', 'education', 'work', 'extracurriculars', 'skills_and_awards', 'comments') # TODO: add new form field names here
 
     model = Review
